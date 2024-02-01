@@ -14,7 +14,9 @@ pub fn handle_command(mut args: env::Args, runtime: &Runtime) -> Result<bool, Er
     let _ = args.next(); // program name
     let command = args.next().unwrap(); // must be there or we would not have been called
 
+    #[cfg(debug_assertions)]
     println!("\n*** Gossip is running in command mode ***");
+    #[cfg(debug_assertions)]
     println!("*** COMMAND = {} ***\n", command);
 
     match &*command {
@@ -49,43 +51,43 @@ pub fn handle_command(mut args: env::Args, runtime: &Runtime) -> Result<bool, Er
 }
 
 pub fn help() -> Result<(), Error> {
-    println!("gossip bech32_decode <bech32string>");
+    println!("gnostr-gossip bech32_decode <bech32string>");
     println!("    decode the bech32 string.");
-    println!("gossip bech32_encode_event_addr <kind> <pubkeyhex> <d> [<relayurl>, ...]");
+    println!("gnostr-gossip bech32_encode_event_addr <kind> <pubkeyhex> <d> [<relayurl>, ...]");
     println!("    encode an event address (parameterized replaceable event link).");
-    println!("gossip decrypt <pubkeyhex> <ciphertext> <padded?>");
+    println!("gnostr-gossip decrypt <pubkeyhex> <ciphertext> <padded?>");
     println!("    decrypt the ciphertext from the pubkeyhex. padded=0 to not expect padding.");
-    println!("gossip events_of_kind <kind>");
+    println!("gnostr-gossip events_of_kind <kind>");
     println!("    print IDs of all events of kind=<kind>");
-    println!("gossip events_of_pubkey_and_kind <pubkeyhex> <kind>");
+    println!("gnostr-gossip events_of_pubkey_and_kind <pubkeyhex> <kind>");
     println!("    print IDs of all events from <pubkeyhex> of kind=<kind>");
-    println!("gossip giftwrap_ids");
+    println!("gnostr-gossip giftwrap_ids");
     println!("    List the IDs of all giftwrap events you are tagged on");
-    println!("gossip help");
+    println!("gnostr-gossip help");
     println!("    show this list");
-    println!("gossip login");
-    println!("    login on the command line before starting the gossip GUI");
-    println!("gossip print_event <idhex>");
+    println!("gnostr-gossip login");
+    println!("    login on the command line before starting the gnostr-gossip GUI");
+    println!("gnostr-gossip print_event <idhex>");
     println!("    print the event (in JSON) from the database that has the given id");
-    println!("gossip print_followed");
+    println!("gnostr-gossip print_followed");
     println!("    print every pubkey that is followed");
-    println!("gossip print_muted");
+    println!("gnostr-gossip print_muted");
     println!("    print every pubkey that is muted");
-    println!("gossip print_person_relays <pubkeyhex>");
+    println!("gnostr-gossip print_person_relays <pubkeyhex>");
     println!("    print all the person-relay records for the given person");
-    println!("gossip print_relay <url>");
+    println!("gnostr-gossip print_relay <url>");
     println!("    print the relay record");
-    println!("gossip print_relays");
+    println!("gnostr-gossip print_relays");
     println!("    print all the relay records");
-    println!("gossip rebuild_indices");
+    println!("gnostr-gossip rebuild_indices");
     println!("    Rebuild all event-related indices");
-    println!("gossip reprocess_recent");
+    println!("gnostr-gossip reprocess_recent");
     println!("    Reprocess events that came during the last 24 hours");
-    println!("gossip ungiftwrap <idhex>");
+    println!("gnostr-gossip ungiftwrap <idhex>");
     println!("    Unwrap the giftwrap event with the given ID and print the rumor (in JSON)");
-    println!("gossip verify <idhex>");
+    println!("gnostr-gossip verify <idhex>");
     println!("    Verify if the given event signature is valid");
-    println!("gossip verify_json <event_json>");
+    println!("gnostr-gossip verify_json <event_json>");
     println!("    Verify if the passed in event JSON's signature is valid");
 
     Ok(())
