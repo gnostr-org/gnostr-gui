@@ -102,6 +102,7 @@ cargo-build-release:## 	cargo-build-release
 cargo-check:## 	cargo-check
 	cargo c
 install:cargo-install## 	install
+cargo-i:cargo-install
 cargo-install:## 	cargo-install
 	cargo install --path .
 
