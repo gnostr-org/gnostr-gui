@@ -38,6 +38,7 @@ jobs:
       - run: cargo clean
       - run: cargo build --release
       - run: cat Cargo.lock
+      - run: ls ./target/release/
       - if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v3
         with:
