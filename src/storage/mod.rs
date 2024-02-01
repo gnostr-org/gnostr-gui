@@ -144,6 +144,7 @@ impl Storage {
         //       after the database has been launched.
         builder.map_size(1048576 * 1024 * 24); // 24 GB
 
+        //TODO: ~/.gnostr/gossip
         let dir = Profile::current()?.lmdb_dir;
         let env = match builder.open(&dir) {
             Ok(env) => env,
