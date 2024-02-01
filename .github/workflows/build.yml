@@ -1,9 +1,24 @@
-name: build every commit
+name: build
+
+# Controls when the action will run.
 on:
+  pull_request:
+    branches:
+      - '*'
+      - '*/*'
+      - '**'
+      - 'master'
+      - 'main'
   push:
     branches:
-      - master
-      - 'v[0-9]*'
+      - '*'
+      - '*/*'
+      - '**'
+      - 'master'
+      - 'main'
+
+  workflow_dispatch:
+
 jobs:
   build:
     strategy:
@@ -20,6 +35,7 @@ jobs:
         with:
           toolchain: stable
       - uses: Swatinem/rust-cache@v2
+      - run: cargo clean
       - run: cargo build --release
       - if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v3
