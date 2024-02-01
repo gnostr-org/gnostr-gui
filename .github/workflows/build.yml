@@ -37,6 +37,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - run: cargo clean
       - run: cargo build --release
+      - run: cat Cargo.lock
       - if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v3
         with:
