@@ -41,8 +41,8 @@ jobs:
       - if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v3
         with:
-          path: target/release/gossip.exe
-          name: gossip.exe
+          path: target/release/gnostr*.exe
+          name: gnostr_gossip.exe
       - if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v3
         with:
