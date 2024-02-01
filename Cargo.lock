@@ -1825,7 +1825,7 @@ dependencies = [
  "memoize",
  "mime",
  "normpath",
- "nostr-types",
+ "nostr-types 0.7.0-unstable",
  "parking_lot",
  "paste",
  "qrcode",
@@ -1858,7 +1858,7 @@ source = "git+https://github.com/mikedilger/gossip-relay-picker?rev=271463fcca7d
 dependencies = [
  "async-trait",
  "dashmap",
- "nostr-types",
+ "nostr-types 0.7.0-unstable (git+https://github.com/mikedilger/nostr-types?rev=7d37cf46acad0dc2771e539e3dd5cb0d28e02b16)",
  "thiserror",
  "tokio",
  "tracing",
@@ -2671,7 +2671,6 @@ dependencies = [
 [[package]]
 name = "nostr-types"
 version = "0.7.0-unstable"
-source = "git+https://github.com/mikedilger/nostr-types?rev=7d37cf46acad0dc2771e539e3dd5cb0d28e02b16#7d37cf46acad0dc2771e539e3dd5cb0d28e02b16"
 dependencies = [
  "aes",
  "base64 0.21.4",
@@ -2699,6 +2698,42 @@ dependencies = [
  "serde_json",
  "sha2",
  "speedy",
+ "thiserror",
+ "thread-priority",
+ "url",
+ "zeroize",
+]
+
+[[package]]
+name = "nostr-types"
+version = "0.7.0-unstable"
+source = "git+https://github.com/mikedilger/nostr-types?rev=7d37cf46acad0dc2771e539e3dd5cb0d28e02b16#7d37cf46acad0dc2771e539e3dd5cb0d28e02b16"
+dependencies = [
+ "aes",
+ "base64 0.21.4",
+ "bech32",
+ "cbc",
+ "chacha20",
+ "chacha20poly1305",
+ "core-net",
+ "derive_more",
+ "hex",
+ "hmac",
+ "http",
+ "inout",
+ "lazy_static",
+ "lightning-invoice",
+ "linkify",
+ "num_cpus",
+ "pbkdf2",
+ "rand",
+ "rand_core",
+ "regex",
+ "scrypt",
+ "secp256k1 0.27.0",
+ "serde",
+ "serde_json",
+ "sha2",
  "thiserror",
  "thread-priority",
  "url",
