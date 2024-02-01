@@ -47,10 +47,10 @@ jobs:
       - if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v3
         with:
-          path: target/release/gossip*
+          path: target/release/gnostr*
           name: gossip_linux
       - if: matrix.os == 'macos-latest'
         uses: actions/upload-artifact@v3
         with:
-          path: target/release/gossip*
+          path: target/release/gnostr*
           name: gossip_macos
