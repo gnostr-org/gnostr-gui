@@ -201,6 +201,8 @@ pub fn handle_command(mut args: env::Args, runtime: &Runtime) -> Result<bool, Er
         "events_of_pubkey_and_kind" => events_of_pubkey_and_kind(command, args)?,
         "giftwrap_ids" => giftwrap_ids(command)?,
         "help" => help(command, args)?,
+        "-h" => help(command, args)?,
+        "--help" => help(command, args)?,
         "import_event" => import_event(command, args, runtime)?,
         "login" => {
             login()?;
