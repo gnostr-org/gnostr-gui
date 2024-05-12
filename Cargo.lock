@@ -3820,19 +3820,19 @@ dependencies = [
  "bitflags 1.3.2",
  "lazy_static",
  "libc",
- "sdl2-sys 0.35.2",
+ "sdl2-sys",
 ]
 
-##[[package]]
-##name = "sdl2-sys"
-##version = "0.35.2"
-##source = "git+https://github.com/Rust-SDL2/rust-sdl2?rev=27cd1fd67c811e06b9d997a77bb6089a1b65070d#27cd1fd67c811e06b9d997a77bb6089a1b65070d"
-##dependencies = [
-## "cfg-if",
-## "cmake",
-## "libc",
-## "version-compare",
-##]
+[[package]]
+name = "sdl2-sys"
+version = "0.35.2"
+source = "git+https://github.com/Rust-SDL2/rust-sdl2?rev=27cd1fd67c811e06b9d997a77bb6089a1b65070d#27cd1fd67c811e06b9d997a77bb6089a1b65070d"
+dependencies = [
+ "cfg-if",
+ "cmake",
+ "libc",
+ "version-compare",
+]
 
 [[package]]
 name = "secp256k1"
