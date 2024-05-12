@@ -1,5 +1,4 @@
 mod minion;
-
 use crate::comms::{
     RelayConnectionReason, RelayJob, ToMinionMessage, ToMinionPayload, ToMinionPayloadDetail,
     ToOverlordMessage,
@@ -16,7 +15,7 @@ use crate::tags::{
 };
 use gossip_relay_picker::{Direction, RelayAssignment};
 use http::StatusCode;
-use minion::Minion;
+use crate::overlord::minion::*;
 use nostr_types::{
     EncryptedPrivateKey, Event, EventKind, Id, IdHex, Metadata, MilliSatoshi, NostrBech32,
     PayRequestData, PreEvent, PrivateKey, Profile, PublicKey, RelayUrl, Tag, UncheckedUrl,
