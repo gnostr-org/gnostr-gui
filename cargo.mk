@@ -13,6 +13,7 @@ cargo-install:### 	cargo install --path .
 	@cargo install --locked --path $(PWD)
 cargo-br:cargo-build-release###	cargo-br
 ## 	make cargo-br q=true
+cargo-br:cargo-build-release
 cargo-build-release:###	cargo-build-release
 ## 	make cargo-build-release q=true
 	@. $(HOME)/.cargo/env

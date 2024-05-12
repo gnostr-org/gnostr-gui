@@ -142,4 +142,4 @@ wasm:
 	@echo "open http://127.0.0.1:8080/index.html#dev"
 
 -include Makefile
--include act.mk
+-include cargo.mk
