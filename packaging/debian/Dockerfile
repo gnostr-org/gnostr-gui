@@ -16,11 +16,11 @@ RUN cargo install cargo-deb@^1
 
 
 # Build gossip
-COPY ./ gui/
-WORKDIR gui
-RUN mkdir -p /gui/artifacts
+COPY . gnostr/
+WORKDIR gnostr
+RUN mkdir -p /gnostr/artifacts
 RUN cargo deb
-RUN ls /gui/target/debian/
+RUN ls /gnostr/target/debian/
 
 FROM scratch as custom-exporter
-COPY --from=builder /gui/target/debian/gnostr-gui*_amd64.deb .
+COPY --from=builder /gnostr/target/debian/gnostr-gui*_amd64.deb .
